@@ -1,0 +1,9 @@
+    .count {
+		border-left: 3px solid #5ABFDB;
+		text-indent: 14px;
+		font-size: 18px;
+		color: rgba(26, 26, 26, 1)
+	}
+	.bg-purple {
+		background: #FFFFFF;
+	}
