@@ -17,7 +17,7 @@ const ReplySMS = () => import('@/components/ShortMessage/ReplySMS')
 const MessageRecording = () => import('@/components/ShortMessage/MessageRecording')
 const TimedSMS = () => import('@/components/ShortMessage/TimedSMS')
 const Daily = () => import('@/components/ShortMessage/Daily')
-
+const TriggerAdd = () => import('@/components/ShortMessage/TriggerAdd')
 Vue.use(Router)
 
 const router = new Router({
@@ -36,7 +36,12 @@ const router = new Router({
 				{
 					path: '/triggerSMS',
 					name: 'triggerSMS',
-					component: TriggerSMS
+					component: TriggerSMS,
+				},
+				{
+					path: '/triggerAdd',
+					name: 'triggerAdd',
+					component:TriggerAdd
 				},
 				{
 					path: '/batchSMS',

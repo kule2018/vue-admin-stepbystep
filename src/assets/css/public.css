@@ -7,3 +7,7 @@
 	.bg-purple {
 		background: #FFFFFF;
 	}
+	/* 去除input 蓝色边框/ */
+	input {
+		outline: none;
+	}

@@ -20,7 +20,7 @@
 									  :value="item.value">
 									</el-option>
 								  </el-select>
-										<el-button>+</el-button>
+										<el-button @click="add">+</el-button>
 									</div>
 									<div class="t-table">
 									<el-scrollbar style="height: 100%;">
@@ -64,6 +64,17 @@
 							  <div class="t-transfer-r">
 								  <div class="t-title">
 										短信接收列表
+									</div>
+									<div class="operator">
+										<div class="o-left">
+											<div class="move">移动(0)</div>
+										  <div class="unicom">联通(0)</div>
+										</div>
+										<div class="o-right">
+											<div class="telecom">电信(0)</div>
+											<div class="o-total">合计(0)</div>
+										</div>
+									  <div class="o-table"></div>
 									</div>
 							  </div>
 						  </el-col>
@@ -181,7 +192,12 @@
       },
       handleSelectionChange(val) {
         this.multipleSelection = val;
-      }
+      },
+			//添加
+			add() {
+				console.log(111)
+				this.$router.push('/triggerAdd')
+			}
     }
   }
 </script>
@@ -321,4 +337,46 @@
   .el-input .el-input--small .el-input--suffix {
   	width: 190px !important;
   }
+	//运营商
+	.operator {
+		height: 105px;
+		width: 100%;
+		border-bottom: 1px solid rgba(235,235,235,1);
+		.o-left {
+			width: 100%;
+			height: 50%;
+			.unicom {
+				width: 50%;
+				float: right;
+				text-align: center;
+				line-height: 50px;
+				font-size: 14px;
+			}
+			.move {
+				width: 50%;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+				font-size: 14px;
+
+			}
+		}
+		.o-right {
+			width: 100%;
+			height: 50%;
+			.telecom {
+				width: 50%;
+				float: left;
+				text-align: center;
+				font-size: 14px;
+			}
+			.o-total {
+				width: 50%;
+				float: right;
+				text-align: center;
+				font-size: 14px;
+				color: #DA7A50;
+			}
+		}
+	}
 </style>
