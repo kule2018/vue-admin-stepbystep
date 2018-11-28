@@ -214,7 +214,12 @@
 		padding: 30px;
 		height: 100%;
 	}
-
+    @media only screen and (max-width: 1400px){
+    	.el-main {
+    		padding: 20px;
+    		
+    	}
+    }
 	.el-submenu__title i {
 		margin-right: 10px;
 	}

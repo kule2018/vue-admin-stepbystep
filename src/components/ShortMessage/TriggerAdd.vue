@@ -1,6 +1,6 @@
 <template>
 	<div class="triggerAdd">
-		<el-row :gutter="20">
+		<el-row :gutter="10">
 		  <el-col :span="5">
 			  <div class="t-grounp">
 			  <div class="count">
@@ -8,7 +8,7 @@
 			  </div>
 				  <div class="a-search">
 					  <div class="a-search-top">
-						  <input placeholder="请输入组别名称">
+						  <input placeholder="输入组别名称">
 						  </input>
 						  <el-button> 搜索</el-button>
 					  </div>
@@ -44,11 +44,12 @@
 						tooltip-effect="dark"
 						border
 						style="width: 100%"
-						:header-cell-style="{background:'rgba(243,247,251,1)'}"
+						:header-cell-style="{background:'rgba(243,247,251,1)',fontSize:'14px'}"
 						@selection-change="handleSelectionChange">
 						<el-table-column
 						  type="selection"
-						  width="55"
+						  min-width="10%"
+
 						  align="center"
 						  >
 						</el-table-column>
@@ -56,13 +57,14 @@
 						  prop="name"
 						  label="姓名"
 						  align="center"
-
-						  width="120">
+                           min-width="15%"
+						 >
 						 <!-- <template slot-scope="scope">{{ scope.row.date }}</template> -->
 						</el-table-column>
 						<el-table-column
 						  prop="phone"
 						  align="center"
+						  min-width="20%"
 
 						  label="电话"
 						  >
@@ -70,7 +72,8 @@
 						<el-table-column
 						  prop="sex"
 						  label="性别"
-						  width="50px"
+						  min-width="7%"
+
 						  align="center"
 
 						  >
@@ -79,12 +82,14 @@
 						prop="birthday"
 						label="生日"
 						align="center"
+						min-width="15%"
 
 						>
 						</el-table-column>
 						<el-table-column
 						prop="company"
 						align="center"
+						min-width="10%"
 
 						label="单位"
 						>
@@ -92,7 +97,7 @@
 						<el-table-column
 						prop="operation"
 						align="center"
-
+                           min-width="25%"
 						label="操作"
 						>
 						<template slot-scope="scope">
@@ -138,7 +143,7 @@
         tableData3: [
 			{
           
-          name: '王小虎',
+          name: '王小虎小和',
 		  phone: '18304815116',
 		  sex: '男',
           birthday:'1992-04-12',
@@ -180,11 +185,19 @@
 </script>
 
 <style lang="less" scoped="scoped">
+		@media only screen and (max-width: 1400px){
+			.el-col-5 {
+			width: 24%;
+		}
+		.el-col-19 {
+			width: 76%;
+		}
+		}
 	// 组别表样式
  .t-grounp {
 	 background-color: #FFFFFF;
 	 padding: 20px;
-	 width: 310px;
+	 // width: 310px;
 	 box-sizing: border-box;
 	 -moz-box-sizing: border-box;
 	 -webkit-box-sizing: border-box;
@@ -244,7 +257,7 @@
 	 margin-top: 10px;
  }
  .t-delete {
-	 width: 80px;
+	 width: 50px;
 	 height: 30px;
 	 border: 1px solid rgba(235,235,235,1);
 	 text-align: center;
@@ -255,7 +268,7 @@
 
  }
  .t-export {
- 	width: 80px;
+ 	width: 75px;
  	height: 30px;
 	text-align: center;
 	line-height: 30px;
@@ -265,6 +278,7 @@
 	margin-left:10px;
  	border: 1px solid rgba(235,235,235,1);
  }
+ // 分页居中
  .el-pagination {
 	 text-align: center;
  }

@@ -436,6 +436,25 @@
 </script>
 
 <style lang="less" scoped="scoped">
+	@media only screen and (max-width: 1300px){
+		.accountOverview .messageB .mam span {
+			font-size: 18px !important;
+		}.accountOverview .accountB .mam span {
+			font-size: 18px !important;
+		}.accountOverview .surplusB .mam span {
+			font-size: 18px !important;
+		}
+		.acount-totle .Aboder {
+			font-size: 18px !important;
+		}
+		.acount-totle .Aboder-l {
+			font-size: 18px !important;
+		}
+	}
+	.el-col-6 {
+		padding: 0 !important;
+	}
+	
     .el-row {
 		margin-bottom: 30px;
 	}
@@ -612,6 +631,7 @@
 	.chartsC {
 		height: 365px;
 		padding: 23px;
+		width: 100%;
 		box-sizing: border-box;
 
 		.charts-a {
@@ -621,6 +641,7 @@
 	}
 
 	.chartsT {
+		width: 100%;
 		height: 365px;
 		padding: 23px;
 		box-sizing: border-box;
@@ -651,7 +672,9 @@
 				p:nth-child(2) {
 					font-size: 12px;
 					margin-top: 8px;
-                    
+                    overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap
 				}
 			}
 			.news-a-b {
@@ -660,6 +683,9 @@
 				p:nth-child(2) {
 					font-size: 12px;
 					margin-top: 8px;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap
 				}
 
 			}
@@ -669,7 +695,9 @@
 				p:nth-child(2) {
 					font-size: 12px;
 					margin-top: 8px;
-
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap
 				}
 			}
 		}
