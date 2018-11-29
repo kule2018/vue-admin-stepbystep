@@ -57,7 +57,7 @@
 						  prop="name"
 						  label="姓名"
 						  align="center"
-                           min-width="15%"
+              min-width="15%"
 						 >
 						 <!-- <template slot-scope="scope">{{ scope.row.date }}</template> -->
 						</el-table-column>

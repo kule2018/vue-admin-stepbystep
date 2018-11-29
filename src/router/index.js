@@ -18,10 +18,11 @@ const MessageRecording = () => import('@/components/ShortMessage/MessageRecordin
 const TimedSMS = () => import('@/components/ShortMessage/TimedSMS')
 const Daily = () => import('@/components/ShortMessage/Daily')
 const TriggerAdd = () => import('@/components/ShortMessage/TriggerAdd')
+const FinancialOV = () => import('@/components/Finance/FinancialOV')
 Vue.use(Router)
 
 const router = new Router({
-	mode:'history',
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -77,6 +78,11 @@ const router = new Router({
 					path: '/daily',
 					name: 'daily',
 					component: Daily
+				},
+				{
+					path: '/FinancialOV',
+					name: 'FinancialOV',
+					component: FinancialOV
 				}
 			]
     }

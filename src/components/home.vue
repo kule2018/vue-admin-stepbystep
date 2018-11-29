@@ -55,7 +55,7 @@
 							<el-submenu index="3">
 								<template slot="title"><i class="iconfont icon-caiwu"></i>财务充值</template>
 								<el-menu-item-group>
-									<el-menu-item index="1-1">财务概览</el-menu-item>
+									<el-menu-item index="/FinancialOV">财务概览</el-menu-item>
 									<el-menu-item index="1-2">在线充值</el-menu-item>
 									<el-menu-item index="1-1">充值管理</el-menu-item>
 									<el-menu-item index="1-2">费用返还</el-menu-item>
