@@ -18,7 +18,18 @@ const MessageRecording = () => import('@/components/ShortMessage/MessageRecordin
 const TimedSMS = () => import('@/components/ShortMessage/TimedSMS')
 const Daily = () => import('@/components/ShortMessage/Daily')
 const TriggerAdd = () => import('@/components/ShortMessage/TriggerAdd')
+// 财务充值
 const FinancialOV = () => import('@/components/Finance/FinancialOV')
+// 业务管理
+const SendAcount = () => import('@/components/BusinessManage/SendAcount')
+const MessageSign = () => import('@/components/BusinessManage/MessageSign')
+const ExemptionMT = () => import('@/components/BusinessManage/ExemptionMT')
+const ComplainMT = () => import('@/components/BusinessManage/ComplainMT')
+const RechargeS = () => import('@/components/BusinessManage/RechargeS')
+const DataAnalysis = () => import('@/components/BusinessManage/DataAnalysis')
+const MessagePush = () => import('@/components/BusinessManage/MessagePush')
+const MessageTip = () => import('@/components/BusinessManage/MessageTip')
+const FastTest = () => import('@/components/BusinessManage/FastTest')
 Vue.use(Router)
 
 const router = new Router({
@@ -83,7 +94,52 @@ const router = new Router({
 					path: '/FinancialOV',
 					name: 'FinancialOV',
 					component: FinancialOV
-				}
+				},
+				{
+					path: '/sendAcount',
+					name: 'sendAcount',
+					component: SendAcount
+				},
+				{
+					path: '/messageSign',
+					name: 'messageSign',
+					component: MessageSign
+				},
+				{
+					path: '/exemptionMT',
+					name: 'exemptionMT',
+					component: ExemptionMT
+				},
+				{
+					path: '/complainMT',
+					name: 'complainMT',
+					component: ComplainMT
+				},
+				{
+					path: '/rechargeS',
+					name: 'rechargeS',
+					component: RechargeS
+				},
+				{
+					path: '/dataAnalysis',
+					name: 'dataAnalysis',
+					component: DataAnalysis
+				},
+				{
+					path: '/messagePush',
+					name: 'messagePush',
+					component: MessagePush
+				},
+				{
+					path: '/messageTip',
+					name: 'messageTip',
+					component: MessageTip
+				},
+				{
+					path: '/fastTest',
+					name: 'fastTest',
+					component: FastTest
+				},
 			]
     }
   ]

@@ -11,3 +11,7 @@
 	input {
 		outline: none;
 	}
+	/* 分页 */
+	.el-pagination {
+		text-align: center;
+	}

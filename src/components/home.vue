@@ -59,7 +59,7 @@
 									<el-menu-item index="1-2">在线充值</el-menu-item>
 									<el-menu-item index="1-1">充值管理</el-menu-item>
 									<el-menu-item index="1-2">费用返还</el-menu-item>
-									<el-menu-item index="1-1">消费管理</el-menu-item>
+									<!-- <el-menu-item index="1-1">消费管理</el-menu-item> -->
 									<el-menu-item index="1-2">索取发票</el-menu-item>
 									<el-menu-item index="1-1">发票管理</el-menu-item>
 								</el-menu-item-group>
@@ -67,15 +67,15 @@
 							<el-submenu index="4">
 								<template slot="title"><i class="iconfont icon-yewu-tianchong"></i>业务管理</template>
 								<el-menu-item-group>
-									<el-menu-item index="1-1">发送账户</el-menu-item>
-									<el-menu-item index="1-2">短信签名</el-menu-item>
-									<el-menu-item index="1-1">免审管理</el-menu-item>
-									<el-menu-item index="1-2">投诉管理</el-menu-item>
-									<el-menu-item index="1-1">充值统计</el-menu-item>
-									<el-menu-item index="1-2">数据统计分析</el-menu-item>
-									<el-menu-item index="1-1">消息推送绑定</el-menu-item>
-									<el-menu-item index="1-2">消息提示</el-menu-item>
-									<el-menu-item index="1-2">快速测试</el-menu-item>
+									<el-menu-item index="/sendAcount">发送账户</el-menu-item>
+									<el-menu-item index="/messageSign">短信签名</el-menu-item>
+									<el-menu-item index="/exemptionMT">免审管理</el-menu-item>
+									<el-menu-item index="/complainMT">投诉管理</el-menu-item>
+									<el-menu-item index="/rechargeS">充值统计</el-menu-item>
+									<el-menu-item index="/dataAnalysis">数据统计分析</el-menu-item>
+									<el-menu-item index="/messagePush">消息推送绑定</el-menu-item>
+									<el-menu-item index="/messageTip">消息提示</el-menu-item>
+									<el-menu-item index="/fastTest">快速测试</el-menu-item>
 
 								</el-menu-item-group>
 							</el-submenu>
