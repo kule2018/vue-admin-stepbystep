@@ -19,6 +19,12 @@ const TimedSMS = () => import('@/components/ShortMessage/TimedSMS')
 const Daily = () => import('@/components/ShortMessage/Daily')
 const TriggerAdd = () => import('@/components/ShortMessage/TriggerAdd')
 const FinancialOV = () => import('@/components/Finance/FinancialOV')
+const OnRecharge = () => import('@/components/Finance/OnRecharge')
+const RechargeManage = () => import('@/components/Finance/RechargeManage')
+const CostReturn = () => import('@/components/Finance/CostReturn')
+const ConManage = () => import('@/components/Finance/ConManage')
+const Invoicing = () => import('@/components/Finance/Invoicing')
+const ConInvoice = () => import('@/components/Finance/ConInvoice')
 Vue.use(Router)
 
 const router = new Router({
@@ -83,7 +89,37 @@ const router = new Router({
 					path: '/FinancialOV',
 					name: 'FinancialOV',
 					component: FinancialOV
-				}
+				},
+				{
+					path: '/OnRecharge',
+					name: 'OnRecharge',
+					component: OnRecharge
+				},
+				{
+					path: '/RechargeManage',
+					name: 'RechargeManage',
+					component: RechargeManage
+				},
+				{
+					path: '/CostReturn',
+					name: 'CostReturn',
+					component: CostReturn
+				},
+				{
+					path: '/ConManage',
+					name: 'ConManage',
+					component: ConManage
+				},
+				{
+					path: '/Invoicing',
+					name: 'Invoicing',
+					component: Invoicing
+				},
+				{
+					path: '/ConInvoice',
+					name: 'ConInvoice',
+					component: ConInvoice
+				},
 			]
     }
   ]

@@ -8,6 +8,35 @@
 		background: #FFFFFF;
 	}
 	/* 去除input 蓝色边框/ */
-	input {
+	input,button {
 		outline: none;
+		text-shadow: none;
 	}
+	::-webkit-input-placeholder{
+		color: #999;
+	}    /* 使用webkit内核的浏览器 */
+:-moz-placeholder{
+	color: #999;
+}                  /* Firefox版本4-18 */
+::-moz-placeholder{
+	color: #999;
+}                  /* Firefox版本19+ */
+:-ms-input-placeholder{
+	color: #999;
+}           /* IE浏览器 */
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  line-height: 0;
+}
+.clearfix {
+    *zoom: 1;
+}
+img{
+	vertical-align: middle;
+}

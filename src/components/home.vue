@@ -56,12 +56,12 @@
 								<template slot="title"><i class="iconfont icon-caiwu"></i>财务充值</template>
 								<el-menu-item-group>
 									<el-menu-item index="/FinancialOV">财务概览</el-menu-item>
-									<el-menu-item index="1-2">在线充值</el-menu-item>
-									<el-menu-item index="1-1">充值管理</el-menu-item>
-									<el-menu-item index="1-2">费用返还</el-menu-item>
-									<el-menu-item index="1-1">消费管理</el-menu-item>
-									<el-menu-item index="1-2">索取发票</el-menu-item>
-									<el-menu-item index="1-1">发票管理</el-menu-item>
+									<el-menu-item index="/OnRecharge">在线充值</el-menu-item>
+									<el-menu-item index="/RechargeManage">充值管理</el-menu-item>
+									<el-menu-item index="/CostReturn">费用返还</el-menu-item>
+									<el-menu-item index="/ConManage">消费管理</el-menu-item>
+									<el-menu-item index="/Invoicing">索取发票</el-menu-item>
+									<el-menu-item index="/ConInvoice">发票管理</el-menu-item>
 								</el-menu-item-group>
 							</el-submenu>
 							<el-submenu index="4">
