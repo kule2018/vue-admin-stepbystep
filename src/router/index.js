@@ -30,6 +30,13 @@ const DataAnalysis = () => import('@/components/BusinessManage/DataAnalysis')
 const MessagePush = () => import('@/components/BusinessManage/MessagePush')
 const MessageTip = () => import('@/components/BusinessManage/MessageTip')
 const FastTest = () => import('@/components/BusinessManage/FastTest')
+// 系统管理
+const BaseInformation = () => import('@/components/SystemManage/BaseInformation')
+const RoleInformation = () => import('@/components/SystemManage/RoleInformation')
+const OperationLog = () => import('@/components/SystemManage/OperationLog')
+const VersionUpdate = () => import('@/components/SystemManage/VersionUpdate')
+const PromotionAmb = () => import('@/components/SystemManage/PromotionAmb')
+const Reward = () => import('@/components/SystemManage/Reward')
 Vue.use(Router)
 
 const router = new Router({
@@ -139,6 +146,31 @@ const router = new Router({
 					path: '/fastTest',
 					name: 'fastTest',
 					component: FastTest
+				},
+				{
+					path: '/baseInformation',
+					name: 'baseInformation',
+					component: BaseInformation
+				}, {
+					path: '/roleInformation',
+					name: 'roleInformation',
+					component: RoleInformation
+				}, {
+					path: '/operationLog',
+					name: 'OperationLog',
+					component: OperationLog
+				}, {
+					path: '/versionUpdate',
+					name: 'versionUpdate',
+					component: VersionUpdate
+				}, {
+					path: '/promotionAmb',
+					name: 'promotionAmb',
+					component: PromotionAmb
+				}, {
+					path: '/reward',
+					name: 'reward',
+					component: Reward
 				},
 			]
     }
