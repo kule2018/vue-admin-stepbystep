@@ -1,5 +1,10 @@
 <template>
 	<div id="batch">
+		<el-switch
+  v-model="value2"
+  active-color="#13ce66"
+  inactive-color="#ff4949">
+</el-switch>
 		<el-row :gutter="20">
 		  <el-col :span="12">
 			  <div class="b-file bg-purple">
@@ -71,6 +76,12 @@
 </script>
 
 <style lang="less" scoped="scoped">
+	.el-switch__input {
+		.el-switch__core:after {
+		background-color: red !important;
+	}
+	}
+	
 	// 通讯组别	
 	.b-file {
 		height: 554px;

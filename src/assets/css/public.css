@@ -8,9 +8,13 @@
 		background: #FFFFFF;
 	}
 	/* 去除input 蓝色边框/ */
-	input,button {
+	input,button ,select{
 		outline: none;
 		text-shadow: none;
+		border: none;
+	}
+	button,select{
+		cursor: pointer;
 	}
 	::-webkit-input-placeholder{
 		color: #999;
@@ -40,3 +44,8 @@
 img{
 	vertical-align: middle;
 }
+	
+	/* 分页 */
+	.el-pagination {
+		text-align: center;
+	}

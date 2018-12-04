@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-const Home= () => import(/* webpackChunkName: "home" */ '@/components/home')
+const Home = () => import(/* webpackChunkName: "home" */ '@/components/home')
 // 短信
 const HomeMain = () => import('@/components/HomeMain')
 
@@ -18,6 +18,7 @@ const MessageRecording = () => import('@/components/ShortMessage/MessageRecordin
 const TimedSMS = () => import('@/components/ShortMessage/TimedSMS')
 const Daily = () => import('@/components/ShortMessage/Daily')
 const TriggerAdd = () => import('@/components/ShortMessage/TriggerAdd')
+// 财务充值
 const FinancialOV = () => import('@/components/Finance/FinancialOV')
 const OnRecharge = () => import('@/components/Finance/OnRecharge')
 const RechargeManage = () => import('@/components/Finance/RechargeManage')
@@ -25,20 +26,30 @@ const CostReturn = () => import('@/components/Finance/CostReturn')
 const ConManage = () => import('@/components/Finance/ConManage')
 const Invoicing = () => import('@/components/Finance/Invoicing')
 const ConInvoice = () => import('@/components/Finance/ConInvoice')
+// 业务管理
+const SendAcount = () => import('@/components/BusinessManage/SendAcount')
+const MessageSign = () => import('@/components/BusinessManage/MessageSign')
+const ExemptionMT = () => import('@/components/BusinessManage/ExemptionMT')
+const ComplainMT = () => import('@/components/BusinessManage/ComplainMT')
+const RechargeS = () => import('@/components/BusinessManage/RechargeS')
+const DataAnalysis = () => import('@/components/BusinessManage/DataAnalysis')
+const MessagePush = () => import('@/components/BusinessManage/MessagePush')
+const MessageTip = () => import('@/components/BusinessManage/MessageTip')
+const FastTest = () => import('@/components/BusinessManage/FastTest')
 Vue.use(Router)
 
 const router = new Router({
-  mode:'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
+	mode: 'history',
+	routes: [
+		{
+			path: '/',
+			name: 'home',
+			component: Home,
 			children: [
 				{
 					path: '/homeMain',
 					name: 'homeMain',
-					component:HomeMain
+					component: HomeMain
 				},
 				{
 					path: '/triggerSMS',
@@ -48,7 +59,7 @@ const router = new Router({
 				{
 					path: '/triggerAdd',
 					name: 'triggerAdd',
-					component:TriggerAdd
+					component: TriggerAdd
 				},
 				{
 					path: '/batchSMS',
@@ -119,13 +130,57 @@ const router = new Router({
 					path: '/ConInvoice',
 					name: 'ConInvoice',
 					component: ConInvoice
+				}, {
+					path: '/sendAcount',
+					name: 'sendAcount',
+					component: SendAcount
+				},
+				{
+					path: '/messageSign',
+					name: 'messageSign',
+					component: MessageSign
+				},
+				{
+					path: '/exemptionMT',
+					name: 'exemptionMT',
+					component: ExemptionMT
+				},
+				{
+					path: '/complainMT',
+					name: 'complainMT',
+					component: ComplainMT
+				},
+				{
+					path: '/rechargeS',
+					name: 'rechargeS',
+					component: RechargeS
+				},
+				{
+					path: '/dataAnalysis',
+					name: 'dataAnalysis',
+					component: DataAnalysis
+				},
+				{
+					path: '/messagePush',
+					name: 'messagePush',
+					component: MessagePush
+				},
+				{
+					path: '/messageTip',
+					name: 'messageTip',
+					component: MessageTip
+				},
+				{
+					path: '/fastTest',
+					name: 'fastTest',
+					component: FastTest
 				},
 			]
-    }
-  ]
+		}
+	]
 });
 //导航钩子
-router.beforeEach((to,from,next) => {
+router.beforeEach((to, from, next) => {
 	NProgress.start()
 	next()
 });
