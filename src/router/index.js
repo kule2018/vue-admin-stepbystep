@@ -5,6 +5,7 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 const Home = () => import(/* webpackChunkName: "home" */ '@/components/home')
+const Login = () => import(/* webpackChunkName: "home" */ '@/components/login')
 // 短信
 const HomeMain = () => import('@/components/HomeMain')
 
@@ -50,6 +51,11 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
+			name: 'login',
+			component: Login
+		},
+		{
+			path: '/home',
 			name: 'home',
 			component: Home,
 			children: [

@@ -1,10 +1,5 @@
 <template>
 	<div id="batch">
-		<el-switch
-  v-model="value2"
-  active-color="#13ce66"
-  inactive-color="#ff4949">
-</el-switch>
 		<el-row :gutter="20">
 		  <el-col :span="12">
 			  <div class="b-file bg-purple">
