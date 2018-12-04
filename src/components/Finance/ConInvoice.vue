@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="co-main">
     <div class="tabs">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="已开票" name="first">
@@ -7,21 +7,22 @@
             <div class="rm-bottom">
               <div class="import">
                 发票抬头
-                <input type="text">
+                <input type="text" placeholder="在此处输入公司名称" >
                 发票类型
                 <select name id>
                   <option value="volvo" selected="selected">选择栏目</option>
-                  <option value="saab">Saab</option>
+                  <option value="saab">普通发票</option>
                   <option value="opel">Opel</option>
                   <option value="audi">Audi</option>
                 </select>
                 发票单号
-                <input type="text" placeholder="在此处输入发票的订单号">
-                订单时段
-                <el-date-picker v-model="value1" type="date" placeholder="在此处输入初始时间"></el-date-picker>
-                <el-date-picker v-model="value1" type="date" placeholder="在此处输入结束时间"></el-date-picker>
-
-                <button>查询</button>
+                <input type="text" placeholder="在此处输入发票的订单号" >
+                <div class="time">
+                  订单时段
+                  <el-date-picker v-model="value1" type="date" placeholder="在此处输入初始时间"></el-date-picker>
+                  <el-date-picker v-model="value1" type="date" placeholder="在此处输入结束时间"></el-date-picker>
+                  <button>查询</button>
+                </div>
               </div>
               <!-- 表格 -->
               <el-table
@@ -56,8 +57,8 @@
           <div class="second-content contents">
             <div class="rm-bottom">
               <div class="import">
-                发票抬头1
-                <input type="text">
+                发票抬头
+                <input type="text" placeholder="在此处输入公司名称">
                 发票类型
                 <select name id>
                   <option value="volvo" selected="selected">选择栏目</option>
@@ -66,12 +67,13 @@
                   <option value="audi">Audi</option>
                 </select>
                 发票单号
-                <input type="text" placeholder="在此处输入发票的订单号">
-                订单时段
-                <el-date-picker v-model="value1" type="date" placeholder="在此处输入初始时间"></el-date-picker>
-                <el-date-picker v-model="value1" type="date" placeholder="在此处输入结束时间"></el-date-picker>
-
-                <button>查询</button>
+                <input type="text" placeholder="在此处输入发票的订单号" >
+                <div class="time">
+                  订单时段
+                  <el-date-picker v-model="value1" type="date" placeholder="在此处输入初始时间"></el-date-picker>
+                  <el-date-picker v-model="value1" type="date" placeholder="在此处输入结束时间"></el-date-picker>
+                  <button>查询</button>
+                </div>
               </div>
               <!-- 表格 -->
               <el-table
@@ -110,7 +112,9 @@
 export default {
   data() {
     return {
+      value1: 1,
       activeName: "first",
+      currentPage: 2,
       tableData: [
         {
           date: "2016-05-02",
@@ -134,12 +138,23 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    handleClick(tab, event) {
+      // console.log(tab, event);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    }
   }
 };
 </script>
 <style lang="less">
 @color: #00c1de;
-.main {
+.co-main {
   padding: 20px;
   background-color: #fff;
   width: 100%;
@@ -161,17 +176,51 @@ export default {
     background-color: @color;
     padding: 0 20px;
   }
-  .import{
-
-    input,button,select{
+  .import {
+    margin-bottom: 20px;
+    padding-top: 5px;
+    input,
+    button,
+    select {
       height: 36px;
-      border: 1px solid #D4D4D4;
+      border: 1px solid #d4d4d4;
       border-radius: 4px;
+      box-sizing: border-box;
     }
-    button{
+    input,
+    select  {
+      margin-right: 48px;
+    }
+    select ,input {
+      width: 190px;
+    }
+    button {
       width: 90px;
       background-color: @color;
       color: #fff;
+      margin-left: 20px;
+    }
+    .time{
+      display: inline-block;
+    }
+  }
+  // 表格样式
+  tr.table-bg,
+  .el-table th {
+    background-color: #f3f7fb;
+  }
+  // 分页样式
+  .el-pagination{
+        margin-top: 10px;
+      }
+}
+@media screen and (max-width: 1790px) {
+  .co-main {
+    .import {
+      .time {
+        margin-right: 200px;
+        margin-top: 10px;
+      }
     }
   }
 }

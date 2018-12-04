@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="account">
-      <el-row :gutter="100">
+      <el-row :gutter="80">
         <el-col :span="8">
           <!-- 基本账户 -->
           <div class="acc acc1">

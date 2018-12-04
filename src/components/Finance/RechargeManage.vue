@@ -2,26 +2,32 @@
   <div class="main">
     <div class="rm-top">
       <el-row>
-        <el-col :span="8">
+        <el-col :span="6">
           <span>
             用户ID:3003240
             <strong>0</strong>条
           </span>
           <button>充值</button>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <span>
             用户ID:3003241
             <strong>1293</strong>条
           </span>
           <button>充值</button>
         </el-col>
-        <el-col :span="8">
+        <el-col :span="6">
           <span>
             用户ID:3003240
             <strong>13729</strong>条
           </span>
           <button>充值</button>
+        </el-col>
+        <el-col :span="6">
+          <span>
+            用户ID:3003240
+            <strong>13729</strong>条
+          </span>
         </el-col>
       </el-row>
     </div>
@@ -41,11 +47,11 @@
         border
         header-row-class-name="table-bg"
       >
-        <el-table-column prop="ID" label="用户ID" align="center"></el-table-column>
-        <el-table-column prop="num" label="充值条数" align="center"></el-table-column>
-        <el-table-column prop="date" label="日期" align="center"></el-table-column>
-        <el-table-column prop="address" label="充值说明" align="center"></el-table-column>
-        <el-table-column prop="status" label="充值状态" align="center"></el-table-column>
+        <el-table-column prop="ID" label="用户ID" align="center" min-width="80"></el-table-column>
+        <el-table-column prop="num" label="充值条数" align="center" min-width="96"></el-table-column>
+        <el-table-column prop="date" label="日期" align="center" min-width="160"></el-table-column>
+        <el-table-column prop="address" label="充值说明" align="center" min-width="456"></el-table-column>
+        <el-table-column prop="status" label="充值状态" align="center" min-width="96"></el-table-column>
       </el-table>
     <!-- 分页 -->
     <el-pagination
@@ -146,6 +152,7 @@ export default {
           width: 190px;
           border-radius: 4px;
           border: 1px solid #d4d4d4;
+          margin-right: 50px;
         }
         button {
           width: 90px;
@@ -158,6 +165,9 @@ export default {
       tr.table-bg,
       .el-table th {
         background-color: #f3f7fb;
+      }
+      .el-pagination{
+        margin-top: 10px;
       }
   }
 }
