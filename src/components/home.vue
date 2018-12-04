@@ -82,13 +82,13 @@
 							<el-submenu index="5">
 								<template slot="title"><i class="iconfont icon-xitongguanli-"></i>系统管理</template>
 								<el-menu-item-group>
-									<el-menu-item index="1-1">基本信息</el-menu-item>
-									<el-menu-item index="1-2">角色信息</el-menu-item>
-									<el-menu-item index="1-1">操作日志</el-menu-item>
-									<el-menu-item index="1-2">版本更新</el-menu-item>
+									<el-menu-item index="/baseInformation">基本信息</el-menu-item>
+									<el-menu-item index="/roleInformation">角色信息</el-menu-item>
+									<el-menu-item index="/operationLog">操作日志</el-menu-item>
+									<el-menu-item index="/versionUpdate">版本更新</el-menu-item>
 									<el-menu-item index="1-1">Q&A</el-menu-item>
-									<el-menu-item index="1-2">推广大使</el-menu-item>
-									<el-menu-item index="1-1">有奖返利</el-menu-item>
+									<el-menu-item index="/promotionAmb">推广大使</el-menu-item>
+									<el-menu-item index="/reward">有奖返利</el-menu-item>
 								</el-menu-item-group>
 							</el-submenu>
 							<el-submenu index="6">
@@ -101,7 +101,7 @@
 					</el-scrollbar>
 				</el-aside>
 				<el-container>
-					<el-scrollbar style="height:100%;width: 100%;">
+					<el-scrollbar style="height: 100%;width: 100%;">
 
 					<el-main>
 						<router-view></router-view>

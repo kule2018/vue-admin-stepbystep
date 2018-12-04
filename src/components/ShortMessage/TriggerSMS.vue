@@ -329,7 +329,7 @@
 		 textarea {
 			 width: 100% !important;
 			 height: 440px !important;
-			 resize:none
+			 resize:none;//禁止拖动
 		 }
 	 }
 	// 企业签名定时发送
