@@ -6,29 +6,31 @@
           <div class="first-content content">
             <div class="top">
               用户ID
-            <select name id>
-              <option value="volvo" selected="selected">选择栏目</option>
-              <option value="saab">普通发票</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-            <button>查询</button>
+              <select name id>
+                <option value="volvo" selected="selected">选择栏目</option>
+                <option value="saab">普通发票</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+              </select>
+              <button>查询</button>
             </div>
             <!-- 月度统计图 -->
             <div class="month">
               <div class="count">月度统计图</div>
-              <div class="det">
+              <div class="det clearfix">
                 <select name id>
-              <option value="volvo" selected="selected">2018</option>
-              <option value="saab">普通发票</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-            <span>本月发送总数:</span>
-            <span>发送成功数:</span>
-            <span>发送失败数:</span>
-            <span>发送成功率:</span>
-            <button>统计详情</button>
+                  <option value="volvo" selected="selected">2018</option>
+                  <option value="saab">普通发票</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+                <div class="det-r">
+                  <span>本月发送总数:</span>
+                  <span>发送成功数:</span>
+                  <span>发送失败数:</span>
+                  <span>发送成功率:</span>
+                  <button @click="MonDet">统计详情</button> 
+                </div>
               </div>
               <el-row>
                 <el-col :span="24">
@@ -41,6 +43,21 @@
             <!-- 年度统计图 -->
             <div class="year">
               <div class="count">年度统计图</div>
+              <div class="det clearfix">
+                <select name id>
+                  <option value="volvo" selected="selected">2018</option>
+                  <option value="saab">普通发票</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+                <div class="det-r">
+                  <span>本月发送总数:</span>
+                  <span>发送成功数:</span>
+                  <span>发送失败数:</span>
+                  <span>发送成功率:</span>
+                  <button @click="YearDet">统计详情</button>
+                </div>
+              </div>
               <el-row>
                 <el-col :span="24">
                   <div class="chart">
@@ -126,12 +143,13 @@ export default {
   methods: {
     handleClick() {
       this.initEcharts();
-      console.log(1);
+      // console.log(1);
     },
     beforeLeave(activeName, oldActiveName) {
       console.log(activeName, oldActiveName);
-      let width = document.querySelector("." + oldActiveName + "-content").offsetWidth;
-      console.log(width);
+      let width = document.querySelector("." + oldActiveName + "-content")
+        .offsetWidth;
+      // console.log(width);
       document.querySelector("." + activeName + "-content").style.width = width;
       this.$nextTick(function() {
         this.initEcharts();
@@ -229,6 +247,7 @@ export default {
           bottom: "3%",
           containLabel: true
         },
+        // 是否可以下载保存为图片
         // toolbox: {
         //   feature: {
         //     saveAsImage: {}
@@ -381,6 +400,12 @@ export default {
       rateChart.resize();
       distChart.resize();
       analyChart.resize();
+    },
+    MonDet() {
+      this.$router.push("/DAMonthDetail");
+    },
+    YearDet() {
+      this.$router.push("/DAYearDetail");
     }
   }
 };
@@ -408,15 +433,16 @@ export default {
     padding: 0 20px;
   }
   // 上面部分
-  .top{
-    input,select{
+  .top {
+    input,
+    select {
       height: 36px;
       width: 190px;
-      border: 1px solid #D4D4D4;
+      border: 1px solid #d4d4d4;
       border-radius: 4px;
       box-sizing: border-box;
     }
-    button{
+    button {
       height: 36px;
       width: 90px;
       box-sizing: border-box;
@@ -426,22 +452,29 @@ export default {
       margin-left: 20px;
     }
   }
-  .det{
+  .det {
     line-height: 36px;
-    select,button{
+    select,
+    button {
       height: 36px;
       width: 73px;
-      border: 1px solid #D4D4D4;
+      border: 1px solid #d4d4d4;
       border-radius: 4px;
       box-sizing: border-box;
     }
-    button{
-      background-color: @color;
-      color: #fff;
-      border: none;
+    select {
+      float: left;
+    }
+    .det-r {
+      float: right;
+      button {
+        background-color: @color;
+        color: #fff;
+        border: none;
+      }
     }
   }
-    // 1 用量统计
+  // 1 用量统计
   .first-content {
     .chart {
       width: 100%;
@@ -454,10 +487,10 @@ export default {
       }
     }
   }
-    .date{
-      float: right;
-    }
-  
+  .date {
+    float: right;
+  }
+
   // 速率分析
   .rate {
     width: 100%;

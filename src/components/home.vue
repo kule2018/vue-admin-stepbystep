@@ -18,7 +18,7 @@
 						<i class="iconfont icon-lianxiwomen"></i>
 						联系我们
 					</div>
-					<div class="message">
+					<div class="message" @click="message">
 						<i class="iconfont icon-xiaoxi"></i>
 						消息
 					</div>
@@ -127,6 +127,10 @@
 			gomain() {
 				console.log(111)
 				this.$router.push('/homeMain')
+			},
+			// 跳转到消息列表页
+			message(){
+				this.$router.push('/Message');
 			}
 		},
 	}

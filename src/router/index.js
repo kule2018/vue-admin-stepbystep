@@ -6,6 +6,7 @@ import 'nprogress/nprogress.css'
 
 const Home = () => import(/* webpackChunkName: "home" */ '@/components/home')
 const Login = () => import(/* webpackChunkName: "home" */ '@/components/login')
+const Message = () => import(/* webpackChunkName: "home" */ '@/components/Message')
 // 短信
 const HomeMain = () => import('@/components/HomeMain')
 
@@ -37,6 +38,8 @@ const DataAnalysis = () => import('@/components/BusinessManage/DataAnalysis')
 const MessagePush = () => import('@/components/BusinessManage/MessagePush')
 const MessageTip = () => import('@/components/BusinessManage/MessageTip')
 const FastTest = () => import('@/components/BusinessManage/FastTest')
+const DAMonthDetail = () => import('@/components/BusinessManage/DAMonthDetail')
+const DAYearDetail = () => import('@/components/BusinessManage/DAYearDetail')
 // 系统管理
 const BaseInformation = () => import('@/components/SystemManage/BaseInformation')
 const RoleInformation = () => import('@/components/SystemManage/RoleInformation')
@@ -63,6 +66,11 @@ const router = new Router({
 					path: '/homeMain',
 					name: 'homeMain',
 					component: HomeMain
+				},
+				{
+					path:'/Message',
+					name:'Message',
+					component:Message
 				},
 				{
 					path: '/triggerSMS',
@@ -172,6 +180,16 @@ const router = new Router({
 					path: '/dataAnalysis',
 					name: 'dataAnalysis',
 					component: DataAnalysis
+				},
+				{
+					path: '/DAYearDetail',
+					name: 'DAYearDetail',
+					component: DAYearDetail
+				},
+				{
+					path: '/DAMonthDetail',
+					name: 'DAMonthDetail',
+					component: DAMonthDetail
 				},
 				{
 					path: '/messagePush',
