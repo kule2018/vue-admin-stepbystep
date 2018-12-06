@@ -133,6 +133,7 @@
 				localStorage.removeItem('myToken')
 				this.$router.push('login')
 				this.$message.success('退出成功了')
+				},
 			// 跳转到消息列表页
 			message(){
 				this.$router.push('/Message');
