@@ -11,8 +11,7 @@
               <span>￥100</span>
             </p>
             <div>
-              <strong>充值金额</strong>
-              <input type="text" placeholder="请输入充值金额">
+              <strong>充值金额</strong><input type="text" placeholder="请输入充值金额">
             </div>
             <div class="pay">
               <div class="top clearfix">
@@ -66,7 +65,7 @@
               <h4>选择购买的套餐</h4>
               <div class="combo">
                 <ul class="clearfix">
-                  <li>
+                  <li class="current">
                     <p>短信10000条</p>
                     <p>标准包</p>
                   </li>
@@ -166,10 +165,10 @@
         </el-tab-pane>
         <el-tab-pane label="线下充值" name="fifth">
           <div class="fifth-content content">
-            <p>充值电话: 021-38293212</p>
-            <p>企业微信: 25938234</p>
-            <p>企业QQ: 12698339</p>
-            <p>E-Mail: 12698669@qq.com</p>
+            <p>充值电话: &nbsp;&nbsp;021-38293212</p>
+            <p>企业微信: &nbsp;&nbsp;25938234</p>
+            <p>企业QQ: &nbsp;&nbsp; 12698339</p>
+            <p>E-Mail: &nbsp;&nbsp;&ensp; 12698669@qq.com</p>
             <p>备注：线下充值可致电希奥信息科技股份有限公司根据希奥线下充值流程办理充值账户的充值业务</p>
           </div>
         </el-tab-pane>
@@ -308,7 +307,7 @@ export default {
   .second-content {
     .number {
       margin-bottom: 20px;
-      margin-top: 20px;
+      margin-top: 5px;
       input {
         width: 190px;
         height: 36px;
@@ -331,6 +330,9 @@ export default {
   }
   // 3 套餐购买
   .third-content {
+    h4{
+      margin-top: 5px;
+    }
     li {
       border: 1px solid #d4d4d4;
       width: 200px;
@@ -340,13 +342,33 @@ export default {
       margin-top: 10px;
       text-align: center;
       box-sizing: border-box;
+      padding-top: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      p{
+        font-size: 14px;
+        line-height: 30px;
+      }
+      &.current{
+        border: 1px solid @color;
+        p{
+          color: @color;
+        }
+      }
     }
     li:nth-child(5n) {
-      margin-right: 0;
+      margin-right: 15px;
     }
     .el-input-number .el-input__inner {
       padding: 0 60px;
       border: 1px solid #000;
+    }
+    .combo-number {
+      padding: 5px 0;
+      p{
+      line-height: 30px;
+      font-size: 14px;
+    }
     }
     .input-number {
       position: relative;
@@ -411,6 +433,7 @@ export default {
       text-align: center;
       line-height: 60px;
       margin-right: 10px;
+      cursor: pointer;
       &:hover {
         border: 1px solid @color;
       }
@@ -424,7 +447,7 @@ export default {
       line-height: 36px;
       background-color: @color;
       color: #fff;
-      margin-left: 84px;
+      margin-left: 76px;
       margin-top: 20px;
       cursor: pointer;
     }
@@ -436,27 +459,70 @@ export default {
         border: 1px solid #d4d4d4;
         border-radius: 4px;
         text-indent: .5em;
-        margin: 20px 15px 20px 20px;
+        margin: 10px 15px 10px 20px;
       }
       select{
         margin-left: 30px;
+        margin-top: 5px;
       }
       .acc-left{
         width: 100px;
       }
+      .pay{
+        margin-top: 10px;
+      }
     }
     // 线下充值
     .fifth-content{
-
+      p{
+        line-height: 32px;
+      }
+      p:last-child{
+        color: #DA7A50;
+        margin-top: 30px;
+      }
     }
 }
-@media screen and (max-width: 1300px) {
-  .main .third-content {
-    li {
-      width: 170px;
-    }
+@media screen and (min-width: 1850px){
+  .main .third-content{
+    li:nth-child(5n) {
+      margin-right:500px;
+      }
   }
 }
+@media screen and (min-width: 1700px) and(max-width: 1850px){
+  .main .third-content{
+    li:nth-child(5n) {
+      margin-right:370px;
+      }
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 1700px){
+  .main .third-content{
+    li:nth-child(5n) {
+      margin-right: 190px;
+      }
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1500px){
+  .main .third-content {
+    li:nth-child(5n) {
+      margin-right: 0px;
+      }
+  }
+}
+@media screen and (max-width: 1300px){
+    .main .third-content {
+      li {
+        width: 170px;
+      }  
+      li:nth-child(5n) {
+      margin-right:0px;
+      }
+    }
+  }
+
+
 </style>
 
 

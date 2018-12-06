@@ -1,7 +1,7 @@
 <template>
 	<div id="triggerSMS">
 		<el-row :gutter="20">
-			<el-col :span="11">
+			<el-col :span="13">
 				<div class="t-left bg-purple">
 					<div class="count">
 						通讯组别
@@ -12,7 +12,6 @@
 							  <div class="t-transfer-l">
 									<div class="t-select">
 										<el-select v-model="value" size="small" placeholder="请选择">
-       
 									<el-option
 									  v-for="item in options"
 									  :key="item.value"
@@ -36,8 +35,7 @@
 									</el-table-column>
 									<el-table-column
 									  label="姓名"
-										prop="name"
-										
+										prop="name"	
 									  width="70">
 									  <!-- <template slot-scope="scope">{{ scope.row.date }}</template> -->
 									</el-table-column>
@@ -87,7 +85,7 @@
 					 </div>
 				</div>
 			</el-col>
-			<el-col :span="13">
+			<el-col :span="11">
 				<div class="t-right bg-purple">
 					<div class="count">
 						编辑发送

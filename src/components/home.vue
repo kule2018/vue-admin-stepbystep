@@ -18,7 +18,11 @@
 						<i class="iconfont icon-lianxiwomen"></i>
 						联系我们
 					</div>
+<<<<<<< HEAD
 					<div class="message" >
+=======
+					<div class="message" @click="message">
+>>>>>>> 40c8ceee18262ff4a066c68fffe952c0100268a2
 						<i class="iconfont icon-xiaoxi"></i>
 						消息
 					</div>
@@ -128,10 +132,16 @@
 				console.log(111)
 				this.$router.push('/homeMain')
 			},
+<<<<<<< HEAD
 			layout() {
 				localStorage.removeItem('myToken')
 				this.$router.push('login')
 				this.$message.success('退出成功了')
+=======
+			// 跳转到消息列表页
+			message(){
+				this.$router.push('/Message');
+>>>>>>> 40c8ceee18262ff4a066c68fffe952c0100268a2
 			}
 			
 		},

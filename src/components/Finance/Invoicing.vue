@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="in-main">
     <div class="in-top">
       <p>说明 :</p>
       <p>1、开票条件：个人开发者可申请普通发票(一百元起)，企业开发者可申请普通发票(一百元起)或增值税专用发票(五百元起)</p>
@@ -21,13 +21,13 @@
         style="width: 100%"
         @selection-change="handleSelectionChange"
       >
-        <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column label="订单号" width="120">
+        <el-table-column type="selection" min-width="36" align="center"></el-table-column>
+        <el-table-column label="订单号" min-width="194" align="center">
           <template slot-scope="scope">{{ scope.row.date }}</template>
         </el-table-column>
-        <el-table-column prop="name" label="订单日期" width="120"></el-table-column>
-        <el-table-column prop="address" label="订单金额" show-overflow-tooltip></el-table-column>
-        <el-table-column prop="action" label="操作" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="name" label="订单日期" min-width="280" align="center"></el-table-column>
+        <el-table-column prop="address" label="订单金额" show-overflow-tooltip min-width="196" align="center"></el-table-column>
+        <el-table-column prop="action" label="操作" show-overflow-tooltip min-width="185" align="center"></el-table-column>
       </el-table>
       <p>已开订单数
         <i>0 </i>单，待开发票金额
@@ -78,14 +78,19 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    handleSelectionChange(val) {
+        this.multipleSelection = val;
+      }
   }
 };
 </script>
 
 <style lang="less">
 @color: #00c1de;
-.main {
-  background-color: #f2f7fb;
+.in-main {
+  background-color: #F2F7FB;
   width: 100%;
   height: 600px;
   box-sizing: border-box;
@@ -117,6 +122,9 @@ export default {
     tr.table-bg,
     .el-table th {
       background-color: #f3f7fb;
+    }
+    .el-table .cell{
+      padding: 0;
     }
     p {
       margin-top: 20px;
