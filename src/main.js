@@ -12,9 +12,12 @@ import "./assets/iconfont/iconfont.css"
 import "./assets/css/public.css"
 // 引入echarts
 import echarts from 'echarts'
+// 导入axios
+import axios from 'axios'
 
 Vue.prototype.$echarts = echarts 
-
+// 把axios对象绑定到Vue原型中
+Vue.prototype.axios = axios
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

@@ -51,6 +51,9 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
+			redirect: '/homeMain'
+		},{
+			path: '/login',
 			name: 'login',
 			component: Login
 		},
@@ -220,7 +223,13 @@ const router = new Router({
 //导航钩子
 router.beforeEach((to, from, next) => {
 	NProgress.start()
-	next()
+	let token = localStorage.getItem('myToken')
+	if (to.path === '/login' || token) {
+		next()
+	}else {
+		next('/login')
+	}
+	
 });
 router.afterEach(() => {
 	NProgress.done()

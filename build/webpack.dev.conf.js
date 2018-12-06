@@ -13,6 +13,21 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+// json-server
+const jsonServer = require('json-server')
+/*搭建一个server*/
+const apiServer = jsonServer.create()
+/*将db.json关联到server*/
+const apiRouter = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
+apiServer.use(middlewares)
+apiServer.use(apiRouter)
+/*监听端口*/
+apiServer.listen(8888, () => {
+  console.log('JSON Server is running')
+  console.log('localhost:8888')
+})
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })

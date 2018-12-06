@@ -6,7 +6,7 @@
 					<img src="../assets/main/logo.png" alt="">
 				</div>
 				<div class="header-right">
-					<div class="logout">
+					<div class="logout"  @click="layout">
 						<!-- 		<div><i class="iconfont icon-084tuichu"></i></div> -->
 						<a href="javascript:;">退出</a>
 					</div>
@@ -18,7 +18,7 @@
 						<i class="iconfont icon-lianxiwomen"></i>
 						联系我们
 					</div>
-					<div class="message">
+					<div class="message" >
 						<i class="iconfont icon-xiaoxi"></i>
 						消息
 					</div>
@@ -127,7 +127,13 @@
 			gomain() {
 				console.log(111)
 				this.$router.push('/homeMain')
+			},
+			layout() {
+				localStorage.removeItem('myToken')
+				this.$router.push('login')
+				this.$message.success('退出成功了')
 			}
+			
 		},
 	}
 </script>
