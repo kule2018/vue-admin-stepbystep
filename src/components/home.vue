@@ -1,33 +1,40 @@
 <template>
 	<div id="home">
 		<el-container>
+			<!--给el-header设置 高度-->
 			<el-header style="height: 70px;">
 				<div class="logo">
-					<img src="../assets/main/logo.png" alt="">
+					<!--这里可以放一般网站的logo-->
+					<!--<img src="../assets/main/logo.png" alt="">-->
 				</div>
 				<div class="header-right">
 					<div class="logout"  @click="layout">
-						<!-- 		<div><i class="iconfont icon-084tuichu"></i></div> -->
+					    <!--javascript:;为了防止a标签的默认行为，-->
 						<a href="javascript:;">退出</a>
 					</div>
 					<div class="people">
+						<!--映入iconfont 的字体图标-->
 						<i class="iconfont icon-lianxirenwode"></i>
-						罗某某
+						张三
 					</div>
 					<div class="call">
 						<i class="iconfont icon-lianxiwomen"></i>
 						联系我们
 					</div>
-					<div class="message" @click="message">
-						<i class="iconfont icon-xiaoxi"></i>
-						消息
-					</div>
-
 				</div>
 			</el-header>
 			<el-container>
 				<el-aside width="160px" background-color="#26292E">
 					<el-scrollbar style="height: 100%;">
+						  <!-- el-menu: 导航菜单的组件 -->
+				          <!-- default-active：默认高亮的菜单 -->
+				          <!-- open close 展开和关闭的事件 -->
+				          <!-- el-submenu: 子菜单 -->
+				          <!-- el-menu-item-group: 子菜单中分组 -->
+				          <!-- el-menu-item：子菜单中的每一项 -->
+				          <!-- unique-opened: 保证只能打开一个子菜单 -->
+				          <!-- router: 如果router为true，那么index就会作为路由的连接 -->
+				          
 						<el-menu :unique-opened='true' :router="true" text-color="#ffffff" active-text-color="#cccccc">
 							<el-submenu index="1">
 								<template slot="title"><i class="iconfont icon-shouye"></i>
@@ -36,75 +43,40 @@
 									</span>
 								</template>
 							</el-submenu>
-							<!-- <div style="width: 160px;height: 100px;background-color: red;">
-								
-							</div> -->
+						
 							<el-submenu index="2">
-								<template slot="title"><i class="iconfont icon-message-channel"></i>短信</template>
+								<template slot="title"><i class="iconfont icon-message-channel"></i>table</template>
 								<el-menu-item-group>
-									<el-menu-item index="/triggerSMS">触发短信</el-menu-item>
-									<el-menu-item index="/batchSMS">批量短信</el-menu-item>
-									<el-menu-item index="/templateSMS">模板短信</el-menu-item>
-									<el-menu-item index="/documentSMS">文件短信</el-menu-item>
-									<el-menu-item index="/replySMS">短信回复</el-menu-item>
-									<el-menu-item index="/messageRecording">短信记录</el-menu-item>
-									<el-menu-item index="/timedSMS">定时短信</el-menu-item>
-									<el-menu-item index="/daily">日常用语管理</el-menu-item>
+									<el-menu-item index="/table">table</el-menu-item>
 								</el-menu-item-group>
 							</el-submenu>
-							<el-submenu index="3">
-								<template slot="title"><i class="iconfont icon-caiwu"></i>财务充值</template>
+							<!--<el-submenu index="3">
+								<template slot="title"><i class="iconfont icon-caiwu"></i>财值</template>
 								<el-menu-item-group>
-									<el-menu-item index="/FinancialOV">财务概览</el-menu-item>
-									<el-menu-item index="/OnRecharge">在线充值</el-menu-item>
-									<el-menu-item index="/RechargeManage">充值管理</el-menu-item>
-									<el-menu-item index="/CostReturn">费用返还</el-menu-item>
-									<!-- <el-menu-item index="/ConManage">消费管理</el-menu-item> -->
-									<el-menu-item index="/Invoicing">索取发票</el-menu-item>
-									<el-menu-item index="/ConInvoice">发票管理</el-menu-item>
+									<el-menu-item index="/FinancialOV">财览</el-menu-item>
+									
 								</el-menu-item-group>
-							</el-submenu>
-							<el-submenu index="4">
-								<template slot="title"><i class="iconfont icon-yewu-tianchong"></i>业务管理</template>
-								<el-menu-item-group>
-									<el-menu-item index="/sendAcount">发送账户</el-menu-item>
-									<el-menu-item index="/messageSign">短信签名</el-menu-item>
-									<el-menu-item index="/exemptionMT">免审管理</el-menu-item>
-									<el-menu-item index="/complainMT">投诉管理</el-menu-item>
-									<el-menu-item index="/rechargeS">充值统计</el-menu-item>
-									<el-menu-item index="/dataAnalysis">数据统计分析</el-menu-item>
-									<el-menu-item index="/messagePush">消息推送绑定</el-menu-item>
-									<el-menu-item index="/messageTip">消息提示</el-menu-item>
-									<el-menu-item index="/fastTest">快速测试</el-menu-item>
+							</el-submenu>-->-->
 
-								</el-menu-item-group>
-							</el-submenu>
-							<el-submenu index="5">
-								<template slot="title"><i class="iconfont icon-xitongguanli-"></i>系统管理</template>
-								<el-menu-item-group>
-									<el-menu-item index="/baseInformation">基本信息</el-menu-item>
-									<el-menu-item index="/roleInformation">角色信息</el-menu-item>
-									<el-menu-item index="/operationLog">操作日志</el-menu-item>
-									<el-menu-item index="/versionUpdate">版本更新</el-menu-item>
-									<el-menu-item index="1-1">Q&A</el-menu-item>
-									<el-menu-item index="/promotionAmb">推广大使</el-menu-item>
-									<el-menu-item index="/reward">有奖返利</el-menu-item>
-								</el-menu-item-group>
-							</el-submenu>
-							<el-submenu index="6">
-								<template slot="title"><i class="iconfont icon-kaifazhequanxianpeizhi"></i>开发者</template>
-								<el-menu-item-group>
-									<el-menu-item index="1-1">开发者</el-menu-item>
-								</el-menu-item-group>
-							</el-submenu>
 						</el-menu>
 					</el-scrollbar>
 				</el-aside>
 				<el-container>
+					<!--使用element的自带的滚动条，官方文档没有-->
 					<el-scrollbar style="height: 100%;width: 100%;">
 
 					<el-main>
-						<router-view></router-view>
+						 <keep-alive>
+				            <!-- 这里是会被缓存的视图组件 -->
+				            <!-- $route.meta.keepAlive：如果是true，
+				                     说明是缓存组件，通过keep-alive这个标签把缓存组件显示出来 -->
+			              <router-view v-if="$route.meta.keepAlive">
+			              </router-view>
+			             </keep-alive>
+			
+			          <!-- 这里是不被缓存的视图组件 -->
+			          <router-view v-if="!$route.meta.keepAlive">
+			          </router-view>
 					</el-main>
 					</el-scrollbar>
 				</el-container>
@@ -125,19 +97,17 @@
 		},
 		methods: {
 			gomain() {
-				console.log(111)
 				this.$router.push('/homeMain')
 			},
-         //退出
+          //退出功能
 			layout() {
+//				退出功能要移除localStorage中的myToken
 				localStorage.removeItem('myToken')
+//				跳转到首页
 				this.$router.push('login')
+//				退出成功提示
 				this.$message.success('退出成功了')
-				},
-			// 跳转到消息列表页
-			message(){
-				this.$router.push('/Message');
-			}
+			},
 			
 		},
 	}
@@ -160,22 +130,15 @@
 	}
 
 	.el-scrollbar__wrap {
+		/*禁止横向滚动条的出现*/
 		overflow-x: hidden;
-	}
-// 	.el-scrollbar__view {
-// 		height: 100%;
-// 	}
-
-	.el-submenu__title {
-		// color: #FFFFFF;
 	}
 
 	.el-header {
-		// background-color: #FFFFFF;
+
 		color: #333;
 		text-align: center;
 		padding: 0;
-
 		.logo {
 			float: left;
 			width: 160px;
@@ -212,6 +175,7 @@
 				background-color: #32373D;
 
 				a {
+					/*去a标签的下划线可以在公共样式中配置*/
 					text-decoration: none;
 					color: #FFFFFF;
 				}
@@ -237,7 +201,7 @@
 
 	.el-menu {
 		background-color: #26292E;
-    border-right: none;
+        border-right: none;
 		.el-menu-item-group {
 			background-color: #32373D;
 		}
